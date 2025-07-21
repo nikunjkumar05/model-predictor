@@ -7,7 +7,7 @@ This tool is designed for **Classification** and **Regression** tasks and suppor
 ## ✨ Key Features
 
 - **Model Identification**: Predicts which trained model matches your uploaded predictions.
-- **Built-in Datasets**: Iris, Wine, Breast Cancer, Diabetes, and Titanic datasets included.
+- **Built-in Datasets**: Iris, Wine, Breast Cancer, Diabetes included.(Many more coming).
 - **Automatic Data Processing**:
   - Cleans missing values.
   - Encodes categorical features.
@@ -38,14 +38,14 @@ This tool is designed for **Classification** and **Regression** tasks and suppor
 ## 📂 Project Structure
 
 project-folder/
-│
-├─ app.py                 # Main Streamlit app
-├─ requirements.txt       # List of dependencies
-├─ README.md              # Project documentation
-└─ src/
-    ├─ preprocessing.py   # Data cleaning & preprocessing functions
-    ├─ training.py        # Functions to train multiple ML models
-    └─ model_identifier.py# Logic to identify most probable model
+  │
+  ├─ app.py                 # Main Streamlit app
+  ├─ requirements.txt       # List of dependencies
+  ├─ README.md              # Project documentation
+  └─ src/
+      ├─ preprocessing.py   # Data cleaning & preprocessing functions
+      ├─ training.py        # Functions to train multiple ML models
+      └─ model_identifier.py# Logic to identify most probable model
 
 
 
