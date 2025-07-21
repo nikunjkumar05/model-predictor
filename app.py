@@ -80,4 +80,4 @@ else:
                 st.pyplot(fig2)
 
 st.markdown("---")
-st.caption("ML Model Predictor BY : Nikunj")
+st.caption("ML Model Predictor © 2025 – Developed by Nikunj")
