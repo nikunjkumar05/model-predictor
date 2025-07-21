@@ -1,26 +1,19 @@
 import numpy as np
 from sklearn.metrics import (accuracy_score, log_loss, f1_score,r2_score, mean_squared_error, mean_absolute_error)
 
-
 def cor(a, b):
-    try:
         corr = np.corrcoef(a, b)[0, 1]  # Pearson correlation
         if np.isnan(corr):
             return 0.0
         return corr
-    except:
-        return 0.0
-        
 
 def identify_model(trained_models, X_user, y_true, y_pred_uploaded, task_type, temperature=1.0):
     scores = {}
-
     if task_type=="Classification":
         for name, model in trained_models.items():
             try:
                 model_preds=model.predict(X_user)
                 model_probs=model.predict_proba(X_user)
-
                 acc=accuracy_score(y_true, model_preds)
                 f1=f1_score(y_true, model_preds, average='weighted')
                 try:
@@ -30,17 +23,14 @@ def identify_model(trained_models, X_user, y_true, y_pred_uploaded, task_type, t
 
                 similaritiy=accuracy_score(y_pred_uploaded, model_preds)
                 corr=cor(y_pred_uploaded, model_preds)
-                
                 # Combine multiple classification metrics into a single weighted score:
                 # -acc (15%): accuracy of the model (higher is better)
-                # -f1 (8%): F1-score, accounts for precision and recall (higher is better)
-                # -ll (-5%): log loss, measures prediction uncertainty (lower is better, so subtracted)
+                # -f1 (10%): F1-score, accounts for precision and recall (higher is better)
+                # -ll (-10%): log loss, measures prediction uncertainty (lower is better, so subtracted)
                 # -similarity (65%): how close uploaded predictions are to this model’s predictions (higher is better)
-                # -corr (12%): correlation between uploaded predictions and model predictions (higher is better)
-                # -dist_sim (5%): distribution similarity, compares prediction distributions (higher is better)
-               
+                # -corr (10%): correlation between uploaded predictions and model predictions (higher is better)
+
                 scores[name] = (0.15*acc + 0.10*f1 - 0.10*ll + 0.65*similaritiy + 0.10*corr )
-         
             except:
                 scores[name] = -np.inf
 
