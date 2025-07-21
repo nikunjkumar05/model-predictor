@@ -14,6 +14,7 @@ def cor(a, b):
 def identify_model(trained_models, X_user, y_true, y_pred_uploaded, task_type, temperature=1.0):
     scores={}
     if task_type=="Classification":
+        #using label encoder for categorical columns
         label_encoder=LabelEncoder()
         all_labels=np.concatenate([y_true, y_pred_uploaded])
         for model in trained_models.values():
