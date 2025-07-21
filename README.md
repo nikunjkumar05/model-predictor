@@ -22,5 +22,5 @@ Supports both **Classification** and **Regression** tasks.
 
 Clone this repository:
 ```bash
-git clone https://github.com/your-username/ml-model-predictor.git
-cd ml-model-predictor
+git clone https://github.com/nikunjkumar05/modelpredictor.git
+cd model-predictor
