@@ -18,13 +18,9 @@ def identify_model(trained_models, X_user, y_true, y_pred_uploaded, task_type, t
         label_encoder=LabelEncoder()
         all_labels=np.concatenate([y_true, y_pred_uploaded])
         for model in trained_models.values():
-            try:
                 preds=model.predict(X_user)
                 all_labels=np.concatenate([all_labels, preds])
-            except:
-                pass
         label_encoder.fit(all_labels)
-
         y_true=label_encoder.transform(y_true)
         y_pred_uploaded=label_encoder.transform(y_pred_uploaded)
 
