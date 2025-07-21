@@ -1,26 +1,83 @@
 # 🤖 ML Model Predictor
 
-A Streamlit web app that identifies which trained ML model produced uploaded predictions.  
-Supports both **Classification** and **Regression** tasks.
+A Streamlit web application that helps identify which trained Machine Learning model most likely produced a given set of predictions.  
+This tool is designed for **Classification** and **Regression** tasks and supports both built-in datasets and your own uploaded predictions.
 
 ---
 
-## 🚀 Features
-- Built-in datasets: Iris, Wine, Breast Cancer, Diabetes, Titanic
-- Cleans & preprocesses data automatically
-- Trains multiple ML models and evaluates them
-- Upload your own CSV with:
-  - `y_true`: actual values
-  - `y_pred`: predicted values
-  - `features`: any additional columns
-- Visualizes model prediction probabilities (bar & pie charts)
-- Continuous improvements — *"More features coming soon!"*
+## ✨ Key Features
+
+- **Model Identification**: Predicts which trained model matches your uploaded predictions.
+- **Built-in Datasets**: Iris, Wine, Breast Cancer, Diabetes, and Titanic datasets included.
+- **Automatic Data Processing**:
+  - Cleans missing values.
+  - Encodes categorical features.
+- **Interactive Training**:
+  - Trains multiple ML models (classification or regression).
+  - Displays evaluation metrics.
+- **CSV Upload Support**:
+  - Upload a file with:
+    - `y_true`: ground-truth values.
+    - `y_pred`: predicted values.
+    - Additional columns: feature values used for prediction.
+- **Probability Visualization**:
+  - Bar chart and pie chart of model probabilities.
+- **Continuous Updates**:
+  - *"More features coming soon 🚀 — we're improving accuracy with every update!"*
 
 ---
 
-## 📦 Installation
+## 🛠️ Tech Stack
 
-Clone this repository:
+- **Frontend**: [Streamlit](https://streamlit.io/)
+- **Data Processing**: pandas, seaborn
+- **Machine Learning**: scikit-learn
+- **Visualization**: matplotlib, seaborn
+
+---
+
+## 📂 Project Structure
+
+├─ app.py # Main Streamlit app
+├─ requirements.txt # List of dependencies
+├─ README.md # Project documentation
+└─ src/
+      ├─ preprocessing.py # Data cleaning & preprocessing functions
+      ├─ training.py # Functions to train multiple ML models
+      └─ model_identifier.py # Logic to identify most probable model
+
+
+
+📊 Usage Guide
+1. Choose Task Type
+Select Classification or Regression from the sidebar.
+
+2. Pick a Dataset
+Choose from built-in datasets or load Titanic via seaborn.
+
+3. Select Target Column
+Pick the column you want to predict.
+Models will be trained automatically.
+
+4. Upload Predictions
+Prepare a CSV with:
+
+y_true: actual values.
+
+y_pred: predicted values.
+
+Any additional feature columns.
+
+
+
+---
+
+## 📥 Installation
+
+1. **Clone this repository**:
 ```bash
-git clone https://github.com/nikunjkumar05/modelpredictor.git
-cd model-predictor
+git clone https://github.com/nikunjkumar05/model-predictor.git
+cd ml-model-predictor
+
+
+"We’re constantly improving this app — stay tuned for more updates!"
