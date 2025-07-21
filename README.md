@@ -36,18 +36,14 @@ This tool is designed for **Classification** and **Regression** tasks and suppor
 ---
 
 ## 📂 Project Structure
-
-project-folder/
-  │
-  ├─ app.py                 # Main Streamlit app
-  ├─ requirements.txt       # List of dependencies
-  ├─ README.md              # Project documentation
-  └─ src/
-      ├─ preprocessing.py   # Data cleaning & preprocessing functions
-      ├─ training.py        # Functions to train multiple ML models
-      └─ model_identifier.py# Logic to identify most probable model
-
-
+project-folder/ 
+          ├── app.py                # Main Streamlit application 
+          ├── requirements.txt      # Python dependencies 
+          ├── README.md             # Project documentation 
+          └── src/                   # Source code 
+          ├── preprocessing.py   # Data cleaning & preprocessing functions 
+          ├── training.py        # ML model training functions 
+          └── model_identifier.py# Logic to identify the most probable model
 
 📊 Usage Guide
 1. Choose Task Type
