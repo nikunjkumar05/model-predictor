@@ -38,13 +38,15 @@ This tool is designed for **Classification** and **Regression** tasks and suppor
 
 ## 📂 Project Structure
 
-├─ app.py # Main Streamlit app
-├─ requirements.txt # List of dependencies
-├─ README.md # Project documentation
+project-folder/
+│
+├─ app.py                 # Main Streamlit app
+├─ requirements.txt       # List of dependencies
+├─ README.md              # Project documentation
 └─ src/
-      ├─ preprocessing.py # Data cleaning & preprocessing functions
-      ├─ training.py # Functions to train multiple ML models
-      └─ model_identifier.py # Logic to identify most probable model
+    ├─ preprocessing.py   # Data cleaning & preprocessing functions
+    ├─ training.py        # Functions to train multiple ML models
+    └─ model_identifier.py# Logic to identify most probable model
 
 
 
@@ -61,11 +63,8 @@ Models will be trained automatically.
 
 4. Upload Predictions
 Prepare a CSV with:
-
 y_true: actual values.
-
 y_pred: predicted values.
-
 Any additional feature columns.
 
 
