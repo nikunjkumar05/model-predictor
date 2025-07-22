@@ -45,9 +45,9 @@ st.subheader("📂 Download Demo Files")
 cols = st.columns(2)
 
 demo_files = {
-    "Iris (SVC)": "demo_files/iris_SVC.csv",
-    "Wine (RandomForest)": "demo_files/wine_randomforest_classfier.csv",
-    "Diabetes (LinearRegression)": "demo_files/diabetes_linearregression.csv"
+    "Iris (SVC)[target]": "demo_files/iris_SVC.csv",
+    "Wine (RandomForest)[target]": "demo_files/wine_randomforest_classfier.csv",
+    "Diabetes (LinearRegression)[target]": "demo_files/diabetes_linearregression.csv"
 }
 
 for idx, (name, path) in enumerate(demo_files.items()):
@@ -108,7 +108,7 @@ else:
 
             with col2:
                 fig2, ax2 = plt.subplots()
-                ax2.pie(probabilities.values(), labels=probabilities.keys(), autopct='%1.1f%%', colors=plt.cm.Pastel1.colors)
+                ax2.pie(probabilities.values(), labels=probabilities.keys(), autopct='%1.1f%%')
                 ax2.set_title("Model Prediction Probabilities (Pie Chart)")
                 st.pyplot(fig2)
 
