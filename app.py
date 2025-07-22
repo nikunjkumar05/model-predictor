@@ -40,29 +40,19 @@ df = clean_data(df)
 target_col = st.sidebar.selectbox("Select target column", df.columns)
 X, y = preprocess_features(df, target_col)
 
+
 #Demo CSV Downloads
 st.subheader("📂 Download Demo Files")
 cols = st.columns(2)
-
 demo_files = {
     "Iris (SVC)[target]": "demo_files/iris_SVC.csv",
     "Wine (RandomForest)[target]": "demo_files/wine_randomforest_classfier.csv",
     "Diabetes (LinearRegression)[target]": "demo_files/diabetes_linearregression.csv"
 }
-
 for idx, (name, path) in enumerate(demo_files.items()):
     with cols[idx % 2]:
-        try:
             with open(path, "rb") as f:
-                st.download_button(
-                    label=name,
-                    data=f,
-                    file_name=path.split("/")[-1],
-                    mime="text/csv",
-                    use_container_width=True
-                )
-        except FileNotFoundError:
-            st.warning(f"{name} not found in {path}.")
+                st.download_button(label=name,data=f,file_name=path.split("/")[-1],mime="text/csv")
 
 #Train Models
 with st.spinner("Training models..."):
@@ -91,6 +81,8 @@ else:
             X_user = user_df.drop(columns=["y_true", "y_pred"], errors="ignore").values
 
             # Identify model
+            if(task_type!="Classification"):
+                st.write("Beta Version")
             predicted_model, probabilities = identify_model(
                 trained_models, X_user, y_true, y_pred_upload, task_type, temperature=1.0
             )
