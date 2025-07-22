@@ -33,8 +33,8 @@ datasets = {
     "Diabetes": load_diabetes(as_frame=True)
 }
 
-df = datasets[dataset_name].frame.copy()
-
+df=datasets[dataset_name].frame.copy()
+st.info("📢 **Upcoming Feature:** Upload your CSV file — coming soon!")
 #Clean & Preprocess
 df = clean_data(df)
 target_col = st.sidebar.selectbox("Select target column", df.columns)
@@ -45,9 +45,9 @@ X, y = preprocess_features(df, target_col)
 st.subheader("📂 Download Demo Files")
 cols = st.columns(2)
 demo_files = {
-    "Iris (SVC)[target]": "demo_files/iris_SVC.csv",
-    "Wine (RandomForest)[target]": "demo_files/wine_randomforest_classfier.csv",
-    "Diabetes (LinearRegression)[target]": "demo_files/diabetes_linearregression.csv"
+    "Iris (SVC)[col_target]": "demo_files/iris_SVC.csv",
+    "Wine (RandomForest)[col_target]": "demo_files/wine_randomforest_classfier.csv",
+    "Diabetes (LinearRegression)[col_target]": "demo_files/diabetes_linearregression.csv"
 }
 for idx, (name, path) in enumerate(demo_files.items()):
     with cols[idx % 2]:
