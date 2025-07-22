@@ -37,7 +37,6 @@ This tool is designed for **Classification** and **Regression** tasks and suppor
 ---
 
 ## 📂 Project Structure
-project-folder/ 
           ├── app.py                # Main Streamlit application 
           ├── requirements.txt      # Python dependencies 
           ├── README.md             # Project documentation 
