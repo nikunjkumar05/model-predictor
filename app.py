@@ -19,7 +19,7 @@ st.info("✨**More features coming soon!** We’re working on improving accuracy
 st.sidebar.header("Settings")
 task_type = st.sidebar.radio("Select task type", ["Classification", "Regression"])
 
-dataset_name = st.sidebar.selectbox("Choose a dataset", ["Iris", "Wine", "Breast Cancer", "Diabetes", "Titanic"])
+dataset_name = st.sidebar.selectbox("Choose a dataset", ["Iris", "Wine", "Breast Cancer", "Diabetes"])
 
 #Load Dataset
 datasets = {
@@ -34,6 +34,21 @@ df = datasets[dataset_name].frame.copy()
 df = clean_data(df)
 target_col = st.sidebar.selectbox("Select target column", df.columns)
 X, y = preprocess_features(df, target_col)
+
+
+#demo files 
+st.subheader("📂 Download Demo CSV Files")
+
+demo_files = {
+    "Iris(SVC)": "demo_files/iris_SVC.csv",
+    "Wine(RandomForest)": "demo_files/wine_randomforest_classfier.csv",
+    "Diabetes(LinearRegerssion)" : "demo_files/diabetes_linearregression.csv"
+}
+
+for name, path in demo_files.items():
+    with open(path, "rb") as f:
+        st.download_button(label=f"Download {name}",data=f,file_name=path.split("/")[-1],mime="text/csv")
+
 
 # Train Models 
 with st.spinner("Training models..."):
