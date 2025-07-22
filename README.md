@@ -28,7 +28,7 @@ This tool is designed for **Classification** and **Regression** tasks and suppor
 ---
 ## 📽️ User Guide Video
 
-You can watch the user guide video here: [User Guide](user_guide(2).mp4)
+You can watch the user guide video given above 
 ---
 
 ## 🛠️ Tech Stack
