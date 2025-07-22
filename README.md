@@ -36,6 +36,11 @@ This tool is designed for **Classification** and **Regression** tasks and suppor
 
 ---
 
+## Model Accuracy
+-> Classification : 82%
+-> Regression : 75.3%
+
+---
 ## 📂 Project Structure
           ├── app.py                # Main Streamlit application 
           ├── requirements.txt      # Python dependencies 
